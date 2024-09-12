@@ -1,0 +1,30 @@
+:root {
+    --primary_green : #182c25;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    /* max-width: 320px; */
+}
+
+body {
+    background-color: #121212;
+    min-height: 100vh;
+    /* width: 100%;
+    max-width: 320px; */
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: monospace;
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
+}
