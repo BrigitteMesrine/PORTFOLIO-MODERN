@@ -1,53 +1,41 @@
-const syncWait = ms => {
-    const end = Date.now() + ms
-    while (Date.now() < end) continue
-}
-const str = "video game player"
+const strArray = ["software", "fullstack", "devOps", "web_app", "desktop_app", "backend", "java", "database", "postgreSQL", "spring_boot", "agile", "frontend", "react", "typescript", "javascript"]
 const special_chars = ["\\", "/", "#", "~", "$", "µ", "`", "&", "=", "+", "]", "@", "_", "^", "A", "b", "C"]
-const colors = ["rgba(114, 255, 71, 1)", "rgba(114, 255, 71, 0.9)", "rgba(114, 255, 71, 0.8)", "rgba(114, 255, 71, 0.7)", "rgba(114, 255, 71, 0.6)", "rgba(114, 255, 71, 0.5)", "rgba(114, 255, 71, 0.4)", "rgba(114, 255, 71, 0.3)", "rgba(114, 255, 71, 0.2)"]
+const colors = ["rgba(115, 255, 70, 1)", "rgba(115, 255, 70, 0.9)", "rgba(115, 255, 70, 0.8)", "rgba(115, 255, 70, 0.7)", "rgba(115, 255, 70, 0.6)", "rgba(115, 255, 70, 0.5)", "rgba(115, 255, 70, 0.4)", "rgba(115, 255, 70, 0.3)", "rgba(115, 255, 70, 0.2)"]
 let count = 0
-let title = document.getElementsByTagName("h1")[0];
-function generate_string(){
+let title = document.getElementById("skills_anim");
+function generate_string(str){
         let i=0
         while (i<=str.length){
 
-
-            
-            // syncWait(1000)
             setTimeout(function (i) {
                 title.innerHTML = str.substring(0, i);
-                setTimeout(function (i) {
-                //     setTimeout(function (i) {
-                //         setTimeout(function (i) {
-                //             title.innerHTML = str.substring(0, i);
-                            
-                //             for (j=0; j<str.length-i; j++){
-                //                 title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 3)]}'>`+ special_chars[Math.floor(Math.random() * 8)]+"</span>"
-                //             }
-                //         }, 1*i, i);
-                //         title.innerHTML = str.substring(0, i);
-                        
-                //         for (j=0; j<str.length-i; j++){
-                //             title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 3)]}'>`+ special_chars[Math.floor(Math.random() * 8)]+"</span>"
-                //         }
-                //     }, 1*i, i);
-                    title.innerHTML = str.substring(0, i);
-                    
-                    for (j=0; j<str.length-i; j++){
-                        title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 8)]}'>`+ special_chars[Math.floor(Math.random() * 8)]+"</span>"
-                    }
-                }, 1*i, i);
                 
                 for (j=0; j<str.length-i; j++){
-                    title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 8)]}'>`+ special_chars[Math.floor(Math.random() * special_chars.length)]+"</span>"
+                    title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 8)]};text-shadow: rgb(115, 255, 70) 2px 0px 3px;'>`+ special_chars[Math.floor(Math.random() * special_chars.length)]+"</span>"
                 }
-            }, 80*i, i);
+            }, 50*i, i);
             i++;
         }
 }
+generate_string(strArray[0])
+let strIndex = 1
 setInterval(() => {
-    generate_string()
-}, 4000);
+    // generate_string(strArray[Math.floor(Math.random() * strArray.length)])
+    if (strIndex>=strArray.length) {
+        strIndex=0
+        generate_string(strArray[strIndex])
+        strIndex++
+    } else {
+        generate_string(strArray[strIndex])
+        // if (strIndex == 7) {
+        //     document.getElementById("not_front").style.visibility = "visible";
+        //     document.getElementById("not_front").innerText = "(please don't ask for it)";
+        // } else {
+        //     document.getElementById("not_front").style.visibility = "hidden";
+        // }
+        strIndex++
+    }
+}, 1500);
 
 
 
