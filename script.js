@@ -11,7 +11,7 @@ function generate_string(str){
                 title.innerHTML = str.substring(0, i);
                 
                 for (j=0; j<str.length-i; j++){
-                    title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 8)]};text-shadow: rgb(115, 255, 70) 2px 0px 3px;'>`+ special_chars[Math.floor(Math.random() * special_chars.length)]+"</span>"
+                    title.innerHTML = title.innerHTML + `<span style='color:${colors[Math.floor(Math.random() * 8)]};text-shadow: rgba(115, 255, 70,0.5) 1px 1px 2px;'>`+ special_chars[Math.floor(Math.random() * special_chars.length)]+"</span>"
                 }
             }, 50*i, i);
             i++;

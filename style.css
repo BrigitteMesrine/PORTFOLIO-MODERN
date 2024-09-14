@@ -3,7 +3,9 @@
     --high-emphasis : rgba(255, 255, 255, 0.87);
     --medium-emphasis : rgba(255, 255, 255, 0.6);
     --disabled-text : rgba(255, 255, 255, 0.38);
-    --black : #121212;
+    --black : #303030;
+    --lightblack : #404040;
+    --deepblack : #202020;
     --green: #73ff46b3;
     --green: rgb(115, 255, 70);
 }
@@ -23,6 +25,16 @@
     src: url(fonts/Teachers-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: Ponderosa;
+    src: url(fonts/ponde___.ttf);
+}
+
+@font-face {
+    font-family: Basis33;
+    src: url(fonts/basis33.ttf);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -36,12 +48,12 @@ img {
 }
 
 nav {
-    background-color: var(--primary_green);
+    background: linear-gradient(0deg, rgba(1,0,18,0) 10%, var(--black) 50%);
     position: sticky;
     top: 0px;
     display: flex;
     justify-content: space-between;
-    min-height: 30px;
+    min-height: 80px;
 }
 
 button {
@@ -49,17 +61,26 @@ button {
 }
 
 nav>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
-    padding: 10px;
     min-width: 25%;
+    max-height: 30px;
     border-radius: 30px;
     border: none;
     background-color: var(--black);
     font-family: Teachers;
     letter-spacing: 1px;
+    /* background: radial-gradient(circle, var(--deepblack) 40%, rgba(255, 0, 0, 0) 100%); */
+    background: linear-gradient(145deg, #2b2b2b, #333333);
+    box-shadow: #292929 7px 7px 14px,#373737 -7px -7px 14px, var(--lightblack) 0px 0px 40px;
 }
 
 header {
+    border-radius: 10px;
+    margin: 10px;
+    background-color: rgba(128, 255, 0, 0.103);
     display: flex;
     justify-content: space-between;
     color: var(--high-emphasis);
@@ -75,18 +96,18 @@ header>div:first-child {
 }
 
 #name>h1 {
-    font-size: 66px;
+    font-size: 74px;
     margin-block-end: -0.28em;
-    font-family: Teachers;
+    font-family: Basis33;
     font-weight: normal;
     /* letter-spacing: 16px; */
 }
 
 #name>h2 {
     margin-left: 4px;
-    font-size: 36px;
+    font-size: 30px;
     color: var(--medium-emphasis);
-    font-family: Teachers;
+    font-family: Basis33;
     font-weight: normal;
 }
 
@@ -94,11 +115,13 @@ header>div:last-child {
     min-width: 170px;
     min-height: 100%;
     margin-right: 10px;
-    margin-top: 0.40em;
+    margin-top: 0.20em;
     display: flex;
     align-items: flex-end;
-    font-family: monospace;
-    font-size: 25px;
+    font-size: 26px;
+    font-family: Basis33;
+    /* background-color: var(--deepblack); */
+    
 }
 
 /* header>div:last-child>div:nth-child(2) {
@@ -123,7 +146,23 @@ main {
 }
 
 #contact {
+    font-size: 12px;
+    text-shadow: 0px 0px 3px #292929, ;
+    min-height: 67px;
+    min-width: 67px;
     font-family: Teachers;
-    background-color: var(--black);
+    border-radius: 50px;
+    background: linear-gradient(145deg, #2b2b2b, #333333);
+    box-shadow:  7px 7px 14px #292929,
+                 -7px -7px 14px #373737;
 }
 
+button {
+    border: none;
+}
+
+#intro {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-image: url(svg/server-svgrepo-com.svg);
+}
