@@ -8,6 +8,9 @@
     --deepblack : #202020;
     --green: #73ff46b3;
     --green: rgb(115, 255, 70);
+    --Speech-Bubble-Border:#222;
+	--Speech-Bubble-Background:#fcfcfc;
+	--Speech-Bubble-Text:#000;
 }
 
 @font-face {
@@ -48,12 +51,13 @@ img {
 }
 
 nav {
-    background: linear-gradient(0deg, rgba(1,0,18,0) 10%, var(--black) 50%);
+    padding-top: 10px;
+    background: linear-gradient(0deg, rgba(1,0,18,0) 5%, var(--black) 50%);
     position: sticky;
     top: 0px;
     display: flex;
     justify-content: space-between;
-    min-height: 80px;
+    min-height: 70px;
 }
 
 button {
@@ -65,26 +69,30 @@ nav>button {
     justify-content: center;
     align-items: center;
     margin: 5px;
-    min-width: 25%;
+    min-width: 30%;
     max-height: 30px;
-    border-radius: 30px;
-    border: none;
+    border: 2px solid black;
     background-color: var(--black);
-    font-family: Teachers;
+    box-shadow:3px 0px 0px var(--deepblack), 0px 3px 0px var(--deepblack), -3px 0px 0px var(--lightblack), 0px -3px 0px var(--lightblack);
+    font-family: Basis33;
+    font-size: 20px;
     letter-spacing: 1px;
+    /* border : solid black 2px */
     /* background: radial-gradient(circle, var(--deepblack) 40%, rgba(255, 0, 0, 0) 100%); */
-    background: linear-gradient(145deg, #2b2b2b, #333333);
-    box-shadow: #292929 7px 7px 14px,#373737 -7px -7px 14px, var(--lightblack) 0px 0px 40px;
+    /* background: linear-gradient(145deg, #2b2b2b, #333333); */
+    /* box-shadow: #292929 7px 7px 14px,#373737 -7px -7px 14px, var(--lightblack) 0px 0px 40px; */
 }
 
 header {
-    border-radius: 10px;
+    border: solid black 3px;
+    box-shadow:3px 0px 0px var(--deepblack), 0px 3px 0px var(--deepblack), -3px 0px 0px var(--lightblack), 0px -3px 0px var(--lightblack);
     margin: 10px;
     background-color: rgba(128, 255, 0, 0.103);
     display: flex;
     justify-content: space-between;
     color: var(--high-emphasis);
     overflow-wrap: break-word;
+    /* border-radius: 10px; */
 }
 
 header>div {
@@ -100,6 +108,7 @@ header>div:first-child {
     margin-block-end: -0.28em;
     font-family: Basis33;
     font-weight: normal;
+    /* text-shadow: 0.05em 0px 0px black, 0px -0.05em 0px black; */
     /* letter-spacing: 16px; */
 }
 
@@ -137,7 +146,9 @@ header>div:last-child {
 body {
     background-color: var(--black);
     min-height: 100vh;
-    font-family: Teachers;
+    font-family: Basis33;
+    font-size: 20px;
+    /* text-shadow: 6px 32px 0px red, -6px -32px 0px blue ; */
 }
 
 main {
@@ -145,24 +156,134 @@ main {
     margin-left: 14px;
 }
 
+/* #intro>h1 {
+    font-size: 36px;
+    font-weight: normal;
+    text-shadow: 3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black;
+} */
+
+#intro {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#intro>h1 {
+    min-width: 100%;
+}
+
+#speech-bubble {
+	width:150px;
+}
+
+#bub-part-a {
+	margin-left:6px;
+	width:calc(100% - 12px);
+	height:2px;
+	background:var(--Speech-Bubble-Border);
+}
+
+#bub-part-b {
+	margin-left:4px;
+	width:calc(100% - 12px);
+	height:2px;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#bub-part-c {
+	margin-left:2px;
+	width:calc(100% - 8px);
+	height:2px;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#speech-txt {
+	width:calc(100% - 24px);
+	padding:10px;
+	font-family:Basis33;
+	font-size:24px;
+	color:var(--Speech-Bubble-Text);
+	text-align:center;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#speech-arrow {
+	margin-top:-2px;
+	margin-left:115px;
+}
+
+#arrow-w {
+	width:8px;
+	height:8px;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#arrow-x {
+	width:6px;
+	height:2px;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#arrow-y {
+	margin-left:-2px;
+	width:6px;
+	height:2px;
+	background:var(--Speech-Bubble-Background);
+	border-left:2px solid var(--Speech-Bubble-Border);
+	border-right:2px solid var(--Speech-Bubble-Border);
+}
+
+#arrow-z {
+	margin-left:-2px;
+	width:8px;
+	height:2px;
+	background:var(--Speech-Bubble-Border);
+}
+
 #contact {
-    font-size: 12px;
+    font-size: 20px;
     text-shadow: 0px 0px 3px #292929, ;
     min-height: 67px;
     min-width: 67px;
-    font-family: Teachers;
-    border-radius: 50px;
-    background: linear-gradient(145deg, #2b2b2b, #333333);
+    font-family: Basis33;
+    /* border-radius: 50px; */
+    /* background: linear-gradient(145deg, #2b2b2b, #333333);
     box-shadow:  7px 7px 14px #292929,
-                 -7px -7px 14px #373737;
+                 -7px -7px 14px #373737; */
 }
 
 button {
     border: none;
 }
 
-#intro {
+/* #intro {
     background-size: 50%;
     background-repeat: no-repeat;
     background-image: url(svg/server-svgrepo-com.svg);
+} */
+
+#skills {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
 }
+
+#skills>h1 {
+    min-width: 100%;
+}
+
+#backend {
+    align-self: flex-end;
+    min-width: 100%;
+}
+
+
